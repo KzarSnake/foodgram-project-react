@@ -12,4 +12,4 @@
 * Workflow
 
 ## Автор:
-* [Свашенко Денис](https://github.com/KzarSnake) - отзывы (Review) и комментарии (Comments): модели, представления, эндпойнты, права доступа для запросов.  
+* [Свашенко Денис](https://github.com/KzarSnake) 
