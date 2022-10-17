@@ -138,6 +138,8 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 6,
 }
 
+CSV_FILES_DIR = os.path.join(BASE_DIR, 'data')
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
 DJOSER = {
