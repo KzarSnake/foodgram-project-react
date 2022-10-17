@@ -184,11 +184,10 @@ class RecipeWriteSerializer(serializers.ModelSerializer):
                 )
             ingredient_list.append(ingredient)
 
-        for items in ingredients:
-            ingredient = get_object_or_404(Ingredient, id=items['id'])
-            if int(ingredient.get('amount')) <= 0:
+        for ingredient in ingredients:
+            if int(ingredient['amount']) <= 0:
                 raise serializers.ValidationError(
-                    'Количество ингредиента не может быть отрицательным'
+                    {'Количество ингридиентов не может быть отрицательным!'}
                 )
 
         tags = data['tags']
