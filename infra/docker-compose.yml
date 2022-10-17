@@ -8,6 +8,13 @@ services:
     env_file:
       - ./.env
 
+  frontend:
+    image: kzarsnake/foodgram_frontend:latest
+    volumes:
+      - ../frontend/:/app/result_build/
+    depends_on:
+      - db
+
   backend:
     image: kzarsnake/foodgram_backend:latest
     restart: always
@@ -19,13 +26,6 @@ services:
     env_file:
       - ./.env
 
-  frontend:
-    image: kzarsnake/foodgram_frontend:latest
-    volumes:
-      - ../frontend/:/app/result_build/
-    depends_on:
-      - db
-  
   nginx:
     image: nginx:1.19.3
     ports:
