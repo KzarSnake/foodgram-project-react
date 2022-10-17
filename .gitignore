@@ -26,7 +26,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-.vscode
+.vscode/
+*.code-workspace
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -131,3 +132,7 @@ dmypy.json
 
 # .idea
 .idea
+
+# папки со статикой и медиа
+posts/static/
+media/

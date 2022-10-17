@@ -5,7 +5,7 @@
 ### Проект доступен по адресу http://51.250.97.98/recipes
 
 ## Описание:
-Сервис Foodgram позволяет пользователю создавать и редактировать рецепты блюд, оформлять подписку на других пользователей, добавлять рецепты в избранное и формировать список покупок на основе ингредиентов из рецептов. Список покупок можно выгрузить в виде файла (формат .txt).
+Сервис Foodgram позволяет пользователю создавать и редактировать рецепты блюд, оформлять подписку на других пользователей, добавлять рецепты в избранное и формировать список покупок на основе ингредиентов из рецептов. Список покупок можно выгрузить в виде файла (`формат .txt`).
 
 ## Стек технологий: 
 * Django
@@ -26,38 +26,58 @@
 ## Запуск проекта
 
 - Установите Docker на ваш сервер:
-`sudo apt install docker.io`
+```
+sudo apt install docker.io
+```
 
 - Установите Docker-compose на сервер:
-`sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
-`sudo chmod +x /usr/local/bin/docker-compose`
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 - Скопируйте на сервер файлы Docker-compose.yml и nginx.conf из папки infra/. Укажите в конфиге ваш IP.
-`scp docker-compose.yml admin@51.250.18.186:/home/admin/docker-compose.yml`
-`scp nginx.conf admin@51.250.18.186:/home/admin/nginx.conf`
+```
+scp docker-compose.yml <user>@<server_ip>:/home/<user>/docker-compose.yml
+scp nginx.conf <user>@<server_ip>:/home/<user>/nginx.conf
+```
 
 - При первом деплоее локально в файле foodgram_workflow.yml в deploy указываем флаг --build:
-`sudo docker-compose rm -f backend --build`
+```
+sudo docker-compose rm -f backend --build
+```
 
 - После успешного деплоя зайдите на боевой сервер и выполните команды (только после первого деплоя):
     Собрать статические файлы в STATIC_ROOT:
-`docker-compose exec backend python3 manage.py collectstatic --noinput`
+```
+docker-compose exec backend python manage.py collectstatic --noinput
+```
 
 - После запуска контейнеров выполните команды в терминале:
-`docker-compose exec backend python manage.py makemigrations`
-`docker-compose exec backend python manage.py migrate --noinput`
+```
+docker-compose exec backend python manage.py makemigrations
+docker-compose exec backend python manage.py migrate --noinput
+```
 
 - Создаём суперпользователя
-`docker-compose exec backend python manage.py createsuperuser`
+```
+docker-compose exec backend python manage.py createsuperuser
+```
 
 - Загружаем ингредиенты в базу данных (необязательно):
-`docker-compose exec backend python manage.py loaddata ingredients.json`
+```
+docker-compose exec backend python manage.py loaddata ingredients.json
+```
 
 - Запуск контейнеров выполняется командой:
-`docker-compose up`
+```
+docker-compose up
+```
 
 - Остановка контейнеров выполняется командой:
-`docker-compose stop`
+```
+docker-compose stop
+```
 
 ## Базовые модели проекта
 
