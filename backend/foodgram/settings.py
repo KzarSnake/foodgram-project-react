@@ -153,6 +153,6 @@ DJOSER = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    'http://51.250.97.98:3000',
 ]
 CORS_URLS_REGEX = r'^/api/.*$'
