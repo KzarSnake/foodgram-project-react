@@ -2,12 +2,10 @@
 
 ![example workflow](https://github.com/kzarsnake/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)
 
-### Проект доступен по адресу http://51.250.97.98/recipes
-
 ## Описание:
 Сервис Foodgram позволяет пользователю создавать и редактировать рецепты блюд, оформлять подписку на других пользователей, добавлять рецепты в избранное и формировать список покупок на основе ингредиентов из рецептов. Список покупок можно выгрузить в виде файла (`формат .txt`).
 
-## Стек технологий: 
+## Стэк технологий:
 * Django
 * Django Rest Framework
 * Docker
@@ -120,5 +118,6 @@ DB_PORT=5432
 SECRET_KEY='0q%8n81^k%z-eu1n1@mjgpc08c2)19q7mmsuft434jb_x+a*-#'
 ```
 
-## Автор:
-* [Свашенко Денис](https://github.com/KzarSnake) 
+## Автор проекта:
+
+[Денис Свашенко](https://github.com/KzarSnake)
